@@ -9,31 +9,39 @@ const Basket = props => {
   return (
     <aside>
       <div className="sticky">
-        <button>Valider mon pannier</button>
-        <ul className="list">
-          {basket.map((item, index) => {
-            return (
-              <BasketLine
-                states={{ basket, setBasket }}
-                index={index}
-                key={index}
-              ></BasketLine>
-            );
-          })}
-        </ul>
-        <div className="subTotal">
-          <span>Sous-total</span>
-          <span>{`${subTotal} €`}</span>
-        </div>
+        <button className={subTotal === 0 && "emptyButton"}>
+          Valider mon pannier
+        </button>
+        {subTotal === 0 ? (
+          <div className="emptyBasket">Le pannier est vide</div>
+        ) : (
+          <div>
+            <ul className="list">
+              {basket.map((item, index) => {
+                return (
+                  <BasketLine
+                    states={{ basket, setBasket }}
+                    index={index}
+                    key={index}
+                  ></BasketLine>
+                );
+              })}
+            </ul>
+            <div className="subTotal">
+              <span>Sous-total</span>
+              <span>{`${subTotal} €`}</span>
+            </div>
 
-        <div className="deliveryCost">
-          <span>Frais de livraison</span>
-          <span>2.50 €</span>
-        </div>
-        <div className="total">
-          <span>Total</span>
-          <span>{`${subTotal + 2.5} €`}</span>
-        </div>
+            <div className="deliveryCost">
+              <span>Frais de livraison</span>
+              <span>2.50 €</span>
+            </div>
+            <div className="total">
+              <span>Total</span>
+              <span>{`${subTotal + 2.5} €`}</span>
+            </div>
+          </div>
+        )}
       </div>
     </aside>
   );
