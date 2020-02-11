@@ -35,8 +35,10 @@ const BasketLine = props => {
         </button>
       </div>
       <span>{basket[index].title}</span>
-      <span>{`${(basket[index].price * 100 * basket[index].quantity) /
-        100} €`}</span>
+      <span>{`${(
+        (basket[index].price * 100 * basket[index].quantity) /
+        100
+      ).toFixed(2)} €`}</span>
     </li>
   );
 };

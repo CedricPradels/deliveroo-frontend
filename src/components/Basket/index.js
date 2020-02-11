@@ -29,7 +29,7 @@ const Basket = props => {
             </ul>
             <div className="subTotal">
               <span>Sous-total</span>
-              <span>{`${subTotal} €`}</span>
+              <span>{`${subTotal.toFixed(2)} €`}</span>
             </div>
 
             <div className="deliveryCost">
@@ -38,7 +38,7 @@ const Basket = props => {
             </div>
             <div className="total">
               <span>Total</span>
-              <span>{`${subTotal + 2.5} €`}</span>
+              <span>{`${(subTotal + 2.5).toFixed(2)} €`}</span>
             </div>
           </div>
         )}
