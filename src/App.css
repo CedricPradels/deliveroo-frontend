@@ -13,13 +13,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 75%;
+  align-items: center;
 }
 
 main {
   display: flex;
   margin-top: 2rem;
-  align-items: flex-start;
 }
 
 main > div {
@@ -28,4 +27,8 @@ main > div {
 
 main > aside {
   flex: 1;
+}
+
+.wrapper {
+  width: 75%;
 }

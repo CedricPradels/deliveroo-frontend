@@ -1,5 +1,8 @@
 header {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header .firstLine {
@@ -7,7 +10,6 @@ header .firstLine {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1rem 0;
-  border-bottom: 0.2rem solid lightgray;
 }
 
 .firstLine h1 {
@@ -24,17 +26,25 @@ header .firstLine img {
 
 header .restaurant {
   display: flex;
+  justify-content: center;
+  border-top: 0.2rem solid lightgray;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+header .restaurant .wrapper > div {
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem;
 }
 
-header .restaurant > div p {
+header .restaurant div p {
   color: lightgray;
   font-size: 2rem;
 }
 
-header .restaurant > div h2 {
+header .restaurant div h2 {
   font-size: 2rem;
   font-weight: 700;
   margin: 1rem 0;

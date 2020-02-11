@@ -50,24 +50,26 @@ const App = () => {
   return (
     <>
       <Header restaurant={loaded && deliverooData.restaurant}></Header>
-      <main>
-        <div>
-          {loaded &&
-            deliverooData.categories.map((categorie, index) => {
-              if (categorie.meals.length !== 0) {
-                return (
-                  <Categorie
-                    name={categorie.name}
-                    meals={categorie.meals}
-                    states={{ basket, setBasket }}
-                    key={index}
-                  ></Categorie>
-                );
-              }
-            })}
-        </div>
-        <Basket states={{ basket, setBasket, subTotal }}></Basket>
-      </main>
+      <div className="wrapper">
+        <main>
+          <div>
+            {loaded &&
+              deliverooData.categories.map((categorie, index) => {
+                if (categorie.meals.length !== 0) {
+                  return (
+                    <Categorie
+                      name={categorie.name}
+                      meals={categorie.meals}
+                      states={{ basket, setBasket }}
+                      key={index}
+                    ></Categorie>
+                  );
+                }
+              })}
+          </div>
+          <Basket states={{ basket, setBasket, subTotal }}></Basket>
+        </main>
+      </div>
       <Footer></Footer>
     </>
   );
